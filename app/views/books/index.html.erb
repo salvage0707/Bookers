@@ -1,0 +1,37 @@
+<h1><strong>Books</strong></h1>
+
+<!-- 投稿一覧 -->
+<table>
+	<th><strong>Title</strong></th>
+	<th><strong>Body</strong></th>
+	<% @books.each do |book| %>
+	<tr>
+		<td><%= book.title %></td>
+		<td><%= book.body %></td>
+		<td>
+			<%= link_to "Show", book_path(book.id), class: "book-links" %>
+		</td>
+
+
+
+		<!-- リンクの設定まだ -->
+		<td>
+			<%= link_to "Edit", "#", class: "book-links" %>
+		</td>
+
+
+
+		<!-- リンクの設定まだ -->
+		<td>
+			<%= link_to "Destroy", "#", method: :delete, "data-confirm" => "Are you sure?", class: "book-links" %>
+		</td>
+	</tr>
+
+
+	<% end %>
+</table>
+
+<!-- 新規投稿 -->
+<h4><strong>New book</strong></h4>
+
+<%= render 'form', btn_name: "Create Book" %>
