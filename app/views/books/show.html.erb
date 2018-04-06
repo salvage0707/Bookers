@@ -1,4 +1,11 @@
 <div class="show-text-box">
+
+	<!-- 編集時のみ表示 -->
+	<p class="edited-text">
+		<%= flash[:notice] %>
+	</p>
+
+	<!-- 内容表示 -->
 	<p class="show-text">
 		<strong>Title:</strong> <%= @book.title %>
 	</p>
@@ -6,6 +13,7 @@
 		<strong>Body:</strong> <%= @book.body %>
 	</p>
 </div>
+
 <div class="show-link-box">
 	<%= link_to "Edit", edit_book_path, class: "book-links" %>
 	 | 

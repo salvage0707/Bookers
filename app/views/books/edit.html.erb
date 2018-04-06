@@ -1,0 +1,9 @@
+<h1><strong>Editing Book</strong></h1>
+
+<%= render 'form', btn_name: "Update Book" %>
+
+<div class="edit-link-box">
+	<%= link_to "Show", book_path(@book.id), class: "book-links" %>
+	 | 
+	 <%= link_to "Back", books_path, class: "book-links" %>
+</div>
