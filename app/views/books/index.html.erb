@@ -1,3 +1,9 @@
+<!-- 投稿削除後のみ表示 -->
+<p class="destroyed-text">
+	<%= flash[:notice] %>
+</p>
+
+
 <h1><strong>Books</strong></h1>
 
 <!-- 投稿一覧 -->
@@ -8,18 +14,20 @@
 	<tr>
 		<td><%= book.title %></td>
 		<td><%= book.body %></td>
+
+		<!-- 詳細ページへ -->
 		<td>
 			<%= link_to "Show", book_path(book.id), class: "book-links" %>
 		</td>
+
+		<!-- 編集ページへ -->
 		<td>
 			<%= link_to "Edit", edit_book_path(book.id), class: "book-links" %>
 		</td>
 
-
-
-		<!-- リンクの設定まだ -->
+		<!-- 投稿削除 -->
 		<td>
-			<%= link_to "Destroy", "#", method: :delete, "data-confirm" => "Are you sure?", class: "book-links" %>
+			<%= link_to "Destroy", book_path(book.id), method: :delete, "data-confirm" => "Are you sure?", class: "book-links" %>
 		</td>
 	</tr>
 

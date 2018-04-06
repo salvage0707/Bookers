@@ -34,6 +34,12 @@ h1 {
 	font-size: 27px;
 }
 
+.edited-text, .destroyed-text { /* フラッシュテキストの設定*/
+	margin: 0 0 20px 30px;
+	font-size: 13px;
+	color: green;
+}
+
 /*フォーム*/
 .form-box p {
 	margin-top: 10px;
@@ -73,11 +79,6 @@ td {
 }
 
 /*詳細ページ*/
-.edited-text {
-	margin-bottom: 20px;
-	font-size: 13px;
-	color: green;
-}
 
 .show-text-box {
 	margin-left: 30px;
