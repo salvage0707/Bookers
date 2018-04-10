@@ -34,6 +34,10 @@ h1 {
 	font-size: 27px;
 }
 
+strong {
+	font-weight: bolder;
+}
+
 .edited-text, .destroyed-text { /* フラッシュテキストの設定*/
 	margin: 0 0 20px 30px;
 	font-size: 13px;

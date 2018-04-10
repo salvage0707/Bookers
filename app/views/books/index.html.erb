@@ -17,17 +17,17 @@
 
 		<!-- 詳細ページへ -->
 		<td>
-			<%= link_to "Show", book_path(book.id), class: "book-links" %>
+			<%= link_to "Show", book_path(book), class: "book-links" %>
 		</td>
 
 		<!-- 編集ページへ -->
 		<td>
-			<%= link_to "Edit", edit_book_path(book.id), class: "book-links" %>
+			<%= link_to "Edit", edit_book_path(book), class: "book-links" %>
 		</td>
 
 		<!-- 投稿削除 -->
 		<td>
-			<%= link_to "Destroy", book_path(book.id), method: :delete, "data-confirm" => "Are you sure?", class: "book-links" %>
+			<%= link_to "Destroy", book_path(book), method: :delete, "data-confirm" => "Are you sure?", class: "book-links" %>
 		</td>
 	</tr>
 
