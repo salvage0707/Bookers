@@ -9,12 +9,15 @@
   </head>
 
   <body>
-  	
+
   	<!-- ヘッダーの表示 -->
   	<%= render 'layouts/header' %>
 
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
 
+    <!-- フッターの表示 -->
     <%= render 'layouts/footer' %>
   </body>
 </html>

@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
 
+	root to: 'pages#top'
+
+	# pagesコントローラー
+  get 'home/about' => 'pages#about', as: 'about'
+  get 'home'			 => 'pages#top',	 as: 'top'
+
+  # deviseコントローラー
   devise_for :users
-
-  root to: 'books#top'
-
+  #bookコントローラー
   resources :books
 end
