@@ -17,6 +17,24 @@
 		<!-- ナビバーを表示 -->
 		<div class="collapse navbar-collapse" id="navbarEexample7">
 			<ul class="nav navbar-nav navbar-right">
+
+			<!-- ログイン済み表示 -->
+			<% if user_signed_in? %>
+				<li>
+					<%= link_to " Home", top_path, class: "glyphicon glyphicon-home", "aria-hidden" => true %>
+				</li>
+				<li>
+					<%= link_to " Users", "#", class: "glyphicon glyphicon-link", "aria-hidden" => true %>
+				</li>
+				<li>
+					<%= link_to " Books", books_path, class: "glyphicon glyphicon-book", "aria-hidden" => true %>
+				</li>
+				<li>
+					<%= link_to " Log out", destroy_user_session_path,method: :delete, class: "glyphicon glyphicon-log-in", "aria-hidden" => true %>
+				</li>
+
+			<!-- 未ログイン表示 -->
+			<% else %>
 				<li>
 					<%= link_to " Home", top_path, class: "glyphicon glyphicon-home", "aria-hidden" => true %>
 				</li>
@@ -29,36 +47,7 @@
 				<li>
 					<%= link_to " Log in", new_user_session_path, class: "glyphicon glyphicon-log-in", "aria-hidden" => true %>
 				</li>
-
-				<!-- ログイン済み表示,   実装まだ
-				<% if %>
-					<li>
-					<%= link_to "   ホーム", top_path, class: "glyphicon glyphicon-home", "aria-hidden" => true %>
-				</li>
-				<li>
-					<%= link_to "   user一覧", "#", class: "glyphicon glyphicon-user", "aria-hidden" => true %>
-				</li>
-				<li>
-					<%= link_to "   book一覧", "#", class: "glyphicon glyphicon-book", "aria-hidden" => true %>
-				</li>
-				<li>
-					<%= link_to "   ログアウト", "#", class: "glyphicon glyphicon-log-out", "aria-hidden" => true %>
-				</li>
-				未ログイン表示
-				<% else %>
-					<li>
-						<%= link_to "トップ", "#" %>
-					</li>
-					<li>
-						<%= link_to "アバウト", "#" %>
-					</li>
-					<li>
-						<%= link_to "サインアップ", "#" %>
-					</li>
-					<li>
-						<%= link_to "ログイン", "#" %>
-					</li>
-				<% end %> -->
+				<% end %>
 			</ul>
 		</div>
 
