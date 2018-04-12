@@ -1,0 +1,25 @@
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+			<%= form_for(@user) do |f| %>
+				<!-- 名前 -->
+				<div class="form-group">
+					<%= f.label :name, "名前" %>
+					<%= f.text_field :name, class: "form-control" %>
+				</div>
+				<!-- 自己紹介 -->
+				<div class="form-group">
+					<%= f.label :introduction, "自己紹介" %>
+					<%= f.text_area :introduction, rows: 5, class: "form-control" %>
+				</div>
+				<!-- プロフィール画像 -->
+				<div class="form-group">
+					<%= f.label :profile_image, "プロフィール画像" %>
+					<%= f.attachment_field :profile_image %>
+				</div>
+
+				<%= f.submit "Update User", class: "btn btn-info btn-block" %>
+
+			<% end %>
+		</div>
+	</div>
+</div>

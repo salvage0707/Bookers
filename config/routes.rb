@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'users/show'
-
 	root to: 'pages#top'
 
 	# pagesコントローラー
@@ -13,5 +11,5 @@ Rails.application.routes.draw do
   #booksコントローラー
   resources :books
   #usersコントローラー
-  resources :users, only: [:show, :index]
+  resources :users, only: [:show, :index, :edit, :update]
 end
