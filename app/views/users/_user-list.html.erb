@@ -1,0 +1,23 @@
+
+<h1><strong>Books</strong></h1>
+<!-- 投稿一覧 -->
+<table class="table">
+	<thead>
+		<tr>
+			<th><strong>Image</strong></th>
+			<th><strong>Name</strong></th>
+		</tr>
+	</thead>
+	<% users.each do |user| %>
+	<tr>
+		<!-- プロフィール画像 -->
+		<td><%=  %></td>
+		<!-- ユーザーの名前 -->
+		<td><%= user.name %></td>
+		<!-- 詳細ページへ -->
+		<td>
+			<%= link_to "Show", user_path(user), class: "" %>
+		</td>
+	</tr>
+	<% end %>
+</table>

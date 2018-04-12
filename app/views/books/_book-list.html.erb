@@ -1,0 +1,32 @@
+
+<h1><strong>Books</strong></h1>
+<!-- 投稿一覧 -->
+<table class="table">
+	<thead>
+		<tr>
+			<th><strong>Title</strong></th>
+			<th><strong>Opinion</strong></th>
+		</tr>
+	</thead>
+	<% books.each do |book| %>
+	<tr>
+		<td><%= book.title %></td>
+		<td><%= book.body %></td>
+
+		<!-- 詳細ページへ -->
+		<td>
+			<%= link_to "Show", book_path(book), class: "book-links" %>
+		</td>
+
+		<!-- 編集ページへ -->
+		<td>
+			<%= link_to "Edit", edit_book_path(book), class: "book-links" %>
+		</td>
+
+		<!-- 投稿削除 -->
+		<td>
+			<%= link_to "Destroy", book_path(book), method: :delete, "data-confirm" => "Are you sure?", class: "book-links" %>
+		</td>
+	</tr>
+	<% end %>
+</table>

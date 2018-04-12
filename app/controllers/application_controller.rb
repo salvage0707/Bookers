@@ -9,6 +9,6 @@ class ApplicationController < ActionController::Base
 
 	  # サインイン後のリダイレクト先をマイページへ
 	  def after_sign_in_path_for(resource)
-    	# 変更する
+    	user_path(current_user.id)
   	end
 end

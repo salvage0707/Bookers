@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'users/show'
+
 	root to: 'pages#top'
 
 	# pagesコントローラー
@@ -8,6 +10,8 @@ Rails.application.routes.draw do
 
   # deviseコントローラー
   devise_for :users
-  #bookコントローラー
+  #booksコントローラー
   resources :books
+  #usersコントローラー
+  resources :users, only: [:show, :index]
 end
