@@ -1,4 +1,9 @@
 <h3 class="user-headline">User info</h3>
+<% if flash[:user_update] %>
+	<div class="alert alert-success">
+		<%= flash[:user_update] %>
+	</div>
+<% end %>
 <!-- プロフィール画像 -->
 <%= user_image_tag(@user, 100, 100, "img-circle center-block") %>
 

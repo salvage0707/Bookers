@@ -54,6 +54,7 @@ class BooksController < ApplicationController
     def only_made_user
       book = Book.find(params[:id])
       unless book.user == current_user
+        flash[:alert] = "編集権限がありません"
         redirect_to user_path(current_user.id)
       end
     end

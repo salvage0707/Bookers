@@ -19,9 +19,13 @@ class UsersController < ApplicationController
   end
 
   def update
-    user = User.find(params[:id])
-    user.update(user_params)
-    redirect_to user_path(user.id)
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      flash[:user_update] = "User was successfully updated."
+      redirect_to user_path(@user.id)
+    else
+      render 'edit'
+    end
   end
 
   private
@@ -38,6 +42,7 @@ class UsersController < ApplicationController
     def protect_pages
       user = User.find(params[:id])
       unless user == current_user
+        flash[:alert] = "編集権限がありません"
         redirect_to user_path(current_user.id)
       end
     end

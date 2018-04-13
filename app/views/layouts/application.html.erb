@@ -14,6 +14,18 @@
   	<%= render 'layouts/header' %>
 
     <div class="container">
+
+      <!-- flashメッセージを表示 -->
+      <% if flash[:log_in] %>
+        <div class="alert alert-success">
+          <%= flash[:log_in] %>
+        </div>
+      <% elsif flash[:alert] %>
+        <div class="alert alert-danger">
+          <%= flash[:alert] %>
+        </div>
+      <% end %>
+
       <%= yield %>
     </div>
 

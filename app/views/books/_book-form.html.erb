@@ -1,27 +1,16 @@
 <!-- エラーメッセージの表示 -->
+<%= render 'pages/erorr-messages', object: @book %>
 
-<% if book.errors.any? %>
-  <div class="alert alert-danger" id="error_explanation">
-    <!-- エラーの件数を表示 -->
-    <p><strong><%= book.errors.count %>件のエラーが発生しました。</strong></p>
-    <ul>
-      <!-- エラーの全文表示 -->
-      <% book.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
 <%= form_for(book) do |f| %>
 
 	<div class="form-group">
 		<p>Title</p>
-		<%= f.text_field :title, class: "form-control" %>
+		<%= f.text_field :title, class: "form-control", placeholder: "タイトル" %>
 	</div>
 
 	<div class="form-group">
 		<p>Body</p>
-		<%= f.text_area :body, class: "form-control"  %>
+		<%= f.text_area :body, class: "form-control", placeholder: "本文(200文字まで)"  %>
 	</div>
 
 		<%= f.submit "#{btn_name}", class: "btn btn-primary btn-block" %>

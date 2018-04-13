@@ -5,17 +5,19 @@ class ApplicationController < ActionController::Base
   protected
 	  def configure_permitted_parameters
 	    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
+      devise_parameter_sanitizer.permit(:sign_in, keys: [:name])
 	  end
+
 
 	  # サインイン後のリダイレクト先をマイページへ
 	  def after_sign_in_path_for(resource)
-	  	flash[:log_in] = "ログインが成功しました"
+	  	flash[:notice] = "ログインに成功しました"
     	user_path(current_user.id)
   	end
 
   	# サインアウト後のリダイレクト先をトップページへ
   	def after_sign_out_path_for(resource)
-	  	flash[:log_out] = "ログアウトしました"
+	  	flash[:alert] = "ログアウトしました"
     	top_path
   	end
 end
