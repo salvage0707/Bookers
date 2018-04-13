@@ -1,3 +1,17 @@
+<!-- エラーメッセージの表示 -->
+
+<% if book.errors.any? %>
+  <div class="alert alert-danger" id="error_explanation">
+    <!-- エラーの件数を表示 -->
+    <p><strong><%= book.errors.count %>件のエラーが発生しました。</strong></p>
+    <ul>
+      <!-- エラーの全文表示 -->
+      <% book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
 <%= form_for(book) do |f| %>
 
 	<div class="form-group">

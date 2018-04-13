@@ -1,0 +1,15 @@
+<% if flash[:book_create] %>
+	<div class="alert alert-success">
+		<%= flash[:book_create] %>
+	</div>
+
+<% elsif flash[:book_update] %>
+	<div class="alert alert-info">
+		<%= flash[:book_update] %>
+	</div>
+
+<% elsif flash[:book_destroy] %>
+	<div class="alert alert-danger">
+		<%= flash[:book_destroy] %>
+	</div>
+<% end %>

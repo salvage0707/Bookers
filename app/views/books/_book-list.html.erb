@@ -1,5 +1,8 @@
 
 <h1><strong>Books</strong></h1>
+<!-- フラッフメッセージ -->
+<%= render 'books/book-alert-msg' %>
+
 <!-- 投稿一覧 -->
 <table class="table">
 	<thead>
@@ -11,7 +14,12 @@
 	</thead>
 	<% books.each do |book| %>
 	<tr>
-		<td><%= user_image_tag(book.user, 60, 60, "img-circle pull-left") %> </td>
+		<td>
+			<!-- 画像を押すとユーザー画面へ -->
+			<%= link_to user_path(book.user.id) do %>
+				<%= user_image_tag(book.user, 60, 60, "img-circle pull-left") %> 
+			<% end %>
+		</td>
 		<td><%= book.title %></td>
 		<td><%= book.body %></td>
 
