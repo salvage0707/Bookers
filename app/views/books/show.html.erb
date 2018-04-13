@@ -23,8 +23,6 @@
 		<!-- ボタンの表示 -->
 		<div class="row show-book-btn">
 			<div class="btn-group col-md-offset-7 ">
-				<!-- 詳細ページへ -->
-					<%= link_to "Show", book_path(@book), class: "btn btn-info" %>
 
 				<!-- 投稿者のみに制限 -->
 				<% if @book.user == current_user %>
