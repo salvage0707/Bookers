@@ -11,7 +11,7 @@
 	<% users.each do |user| %>
 	<tr>
 		<!-- プロフィール画像 -->
-		<td><%=  %></td>
+		<td><%= user_image_tag(user, 60, 60, "img-circle pull-left") %></td>
 		<!-- ユーザーの名前 -->
 		<td><%= user.name %></td>
 		<!-- 詳細ページへ -->

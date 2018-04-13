@@ -4,29 +4,32 @@
 <table class="table">
 	<thead>
 		<tr>
+			<th><strong>User Image</strong></th>
 			<th><strong>Title</strong></th>
 			<th><strong>Opinion</strong></th>
 		</tr>
 	</thead>
 	<% books.each do |book| %>
 	<tr>
+		<td><%= user_image_tag(book.user, 60, 60, "img-circle pull-left") %> </td>
 		<td><%= book.title %></td>
 		<td><%= book.body %></td>
 
-		<!-- 詳細ページへ -->
-		<td>
-			<%= link_to "Show", book_path(book), class: "book-links" %>
-		</td>
+		<td class="text-center">
+			<div class="btn-group">
+				<!-- 詳細ページへ -->
+					<%= link_to "Show", book_path(book), class: "btn btn-info" %>
 
-		<!-- 編集ページへ -->
-		<td>
-			<%= link_to "Edit", edit_book_path(book), class: "book-links" %>
-		</td>
+				<!-- 投稿者のみに制限 -->
+				<% if book.user == current_user %>
+					<!-- 編集ページへ -->
+						<%= link_to "Edit", edit_book_path(book), class: "btn btn-success" %>
 
-		<!-- 投稿削除 -->
+					<!-- 投稿削除 -->
+						<%= link_to "Destroy", book_path(book), method: :delete, "data-confirm" => "Are you sure?", class: "btn btn-danger" %>
+				<% end %>
+			</div>
 		<td>
-			<%= link_to "Destroy", book_path(book), method: :delete, "data-confirm" => "Are you sure?", class: "book-links" %>
-		</td>
 	</tr>
 	<% end %>
 </table>
