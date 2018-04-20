@@ -9,7 +9,10 @@ Rails.application.routes.draw do
   # deviseコントローラー
   devise_for :users
   #booksコントローラー
-  resources :books
+  resources :books do
+    # bookに関連づいたfavorites
+    resource :favorites, only: [:create, :destroy]
+  end
   #usersコントローラー
   resources :users, only: [:show, :index, :edit, :update]
 end

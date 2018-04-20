@@ -17,11 +17,18 @@
 		<td>
 			<!-- 画像を押すとユーザー画面へ -->
 			<%= link_to user_path(book.user.id) do %>
-				<%= user_image_tag(book.user, 60, 60, "img-circle pull-left") %> 
+				<%= user_image_tag(book.user, 60, 60, "img-circle pull-left") %>
 			<% end %>
 		</td>
 		<td><%= book.title %></td>
 		<td><%= book.body %></td>
+
+		<!-- イイネボタン -->
+		<td>
+		<div id= <%= "fav-#{book.id}" %>
+			<%= render 'favorites/favorite-btn', book: book %>
+			</div>
+		</td>
 
 		<td class="text-center">
 			<div class="btn-group">
