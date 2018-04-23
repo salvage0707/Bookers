@@ -30,6 +30,9 @@
 					<%= link_to " Books", books_path, class: "glyphicon glyphicon-book", "aria-hidden" => true %>
 				</li>
 				<li>
+					<%= link_to " Favorite", user_favorites_path(current_user), class: "glyphicon glyphicon-star", "aria-hidden" => true %>
+				</li>
+				<li>
 					<%= link_to " Log out", destroy_user_session_path,method: :delete, class: "glyphicon glyphicon-log-in", "aria-hidden" => true %>
 				</li>
 

@@ -14,5 +14,8 @@ Rails.application.routes.draw do
     resource :favorites, only: [:create, :destroy]
   end
   #usersコントローラー
-  resources :users, only: [:show, :index, :edit, :update]
+  resources :users, only: [:show, :index, :edit, :update] do
+    # userに関連づいたfavorites
+    resources :favorites, only: [:index]
+  end
 end

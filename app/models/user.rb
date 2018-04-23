@@ -8,6 +8,9 @@ class User < ApplicationRecord
   has_many :books, dependent: :destroy
   has_many :favorites, dependent: :destroy
 
+  # userがいいねしたbookを取得
+  has_many :favorite_books, through: :favorites, source: :book
+
   validates :name, presence: true, length: {in: 2..20}
   validates :introduction, length: {maximum: 50}
 end

@@ -1,0 +1,14 @@
+<div class="row">
+	<div class="col-md-3">
+		<!-- ユーザー情報 -->
+		<%= render 'users/user-info', user: @user %>
+		<!-- 新規投稿フォーム -->
+		<h4 class="new-book-headline">New book</h4>
+		<%= render 'books/book-form', book: @book, btn_name: "Create Book" %>
+	</div>
+
+	<div class="col-md-9">
+		<!-- いいねしている投稿一覧 -->
+		<%= render 'books/book-list', books: @favorite_books %>
+	</div>
+</div>
