@@ -1,0 +1,14 @@
+<!-- エラーメッセージの表示 -->
+<%= render 'pages/erorr-messages', object: message %>
+
+<%= form_for [user, message] do |f| %>
+
+	<div class="form-group">
+		<%= f.text_area :direct_message, rows: "5", class: "form-control", placeholder: "メッセージをここに！" %>
+	</div>
+
+		<%= f.submit "send message!", class: "btn btn-primary btn-block" %>
+
+<% end %>
+
+

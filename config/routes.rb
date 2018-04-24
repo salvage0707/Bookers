@@ -8,14 +8,19 @@ Rails.application.routes.draw do
 
   # deviseコントローラー
   devise_for :users
+
   #booksコントローラー
   resources :books do
     # bookに関連づいたfavorites
     resource :favorites, only: [:create, :destroy]
   end
+
   #usersコントローラー
   resources :users, only: [:show, :index, :edit, :update] do
     # userに関連づいたfavorites
     resources :favorites, only: [:index]
+    # 相手userとのダイレクトメッセージ
+    resources :direct_messages, only: [:index, :create]
   end
+
 end

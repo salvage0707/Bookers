@@ -1,2 +1,0 @@
-class DierctMessage < ApplicationRecord
-end

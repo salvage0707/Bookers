@@ -5,8 +5,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   attachment :profile_image
 
+  # 複数の投稿を持つ
   has_many :books, dependent: :destroy
+  # 複数のいいねを持つ
   has_many :favorites, dependent: :destroy
+  # 複数のダイレクトメッセージを持つ
+  has_many :direct_messages, dependent: :destroy
 
   # userがいいねしたbookを取得
   has_many :favorite_books, through: :favorites, source: :book

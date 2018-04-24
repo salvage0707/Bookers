@@ -1,0 +1,9 @@
+<div class="message-list-box">
+	<% direct_messages.each do |direct_message| %>
+		<div class=" clearfix" style="width: 100%;">
+			<div class="message-list <%= change_pull_class(direct_message) %>">
+					<%= direct_message.direct_message %>
+			</div>
+		</div>
+	<% end %>
+</div>

@@ -5,24 +5,27 @@
 	</div>
 <% end %>
 <!-- プロフィール画像 -->
-<%= user_image_tag(@user, 100, 100, "img-circle center-block") %>
+<%= user_image_tag(user, 100, 100, "img-circle center-block") %>
 
 <table class="table">
 	<tbody>
 		<!-- ユーザーネーム -->
 		<tr>
 			<th>Name</th>
-			<th> <%= @user.name %> </th>
+			<th> <%= user.name %> </th>
 		</tr>
 		<!-- 紹介文 -->
 		<tr>
 			<th>Introduction</th>
-			<th><%= @user.introduction %> </th>
+			<th><%= user.introduction %> </th>
 		</tr>
 	</tbody>
 </table>
 
 <!-- ユーザー情報の編集 -->
-<% if @user == current_user %>
+<% if user == current_user %>
 	<%= link_to "", edit_user_path(user) ,class: "btn btn-default btn-block glyphicon glyphicon-wrench" %>
+<% else %>
+	<%= link_to "メッセージを送る", user_direct_messages_path(user_id: user.id), class: "btn btn-default btn-block" %>
 <% end %>
+
